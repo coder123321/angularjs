@@ -1,0 +1,35 @@
+
+<div ng-controller="eController" style="width: 60%;" class="container">
+	<h1>我的购物车</h1>
+	<table class="table table-bordered">
+		<tr>
+			<th>商品名称</th>
+			<th>单价(元)</th>
+			<th>数量</th>
+			<th>操作</th>
+		</tr>
+		<tr ng-repeat="item in cart">
+			<td>{{item.cart_name}}</td>
+			<td>{{item.cart_price}}</td>
+			<td>
+				<button type="button" ng-click="reduce(item)"
+					class="btn btn-primary">-</button> {{item.cart_count}}
+				<button type="button" ng-click="add(item)" class="btn btn-primary">+</button>
+			</td>
+			<td><button ng-click="deleteGwc(item);" type="button"
+					class="btn btn-danger">删除</button></td>
+		</tr>
+		<tr>
+			<td>产品总价格</td>
+			<td>{{ totalPrice() }}</td>
+			<td>产品总数量</td>
+			<td>{{ totalNum() }}</td>
+		</tr>
+		<tr>
+		<td colspan="2" style="text-align: center"><button
+					ng-click="clean()" type="button" class="btn btn-danger">清空购物车</button></td>
+		</tr>
+		
+	</table>
+
+</div>

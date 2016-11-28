@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>首页</title>
+<link rel="stylesheet" href="/angularjs-demo/bootstrap.min.css" />
+<script type="text/javascript" src="/angularjs-demo/angular.js"></script>
+<script type="text/javascript" src="/angularjs-demo/angular-route.js"></script>
+<script type="text/javascript" src="/angularjs-demo/bootstrap.min.js"></script>
+<script type="text/javascript" src="/angularjs-demo/cart_js\app.js"></script>
+<script type="text/javascript" src="/angularjs-demo/angular-cookies.js"></script>
+</head>
+<body ng-app="indexapp">
+	<div class="tabbable">
+		<!-- Only required for left/right tabs -->
+		<ul class="nav nav-tabs">
+
+			<li><a href="#/" data-toggle="tab">电器商品</a></li>
+			<li><a href="#/men" data-toggle="tab">男装</a></li>
+			<li><a href="#/women" data-toggle="tab">女装</a></li>
+			<li><a href="#/shopCart" data-toggle="tab">我的购物车</a></li>
+			<li><a href="#/midify-user" data-toggle="tab">修改用户信息</a></li>
+		</ul>
+	</div>
+	<div ng-view></div>
+	
+
+
+
+</body>
+</html>

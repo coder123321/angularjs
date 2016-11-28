@@ -1,0 +1,24 @@
+
+<div ng-controller="cController" style="width: 60%;" class="container" ng-init="shopList()">
+	<h1>百变男衣</h1>
+	 <form class="navbar-form navbar-left">
+        <input class="form-control" placeholder="商品名称" type="text" ng-model="shopName" name="shop_name">
+        <input class="form-control" placeholder="价格范围" type="text" ng-model="shopPrice" name="shop_price">
+        <button class="btn btn-primary" type="button"  ng-click="shopList()">查询</button>
+    </form>
+   <table class="table table-bordered">
+		<tr>
+			<th>商品名称</th>
+			<th>单价(元)</th>
+			<th>数量</th>
+			<th>操作</th>
+		</tr>
+		<tr ng-repeat="item in men">
+			<td>{{item.shop_name}}</td>
+			<td>{{item.shop_price}}</td>
+			<td>{{item.shop_count}}</td>
+			<td><button ng-click="addGwc(item);" type="button"
+					class="btn btn-danger">加入购物车</button></td>
+		</tr>
+	</table>
+</div>

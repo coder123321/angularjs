@@ -1,0 +1,37 @@
+
+<div ng-controller="bController" style="width: 60%;" class="container"
+	ng-init="loadelectGood()">
+	<h1>电器商品</h1>
+	<form class="form-search">
+		按名字搜索：<input type="text" class="input-medium search-query"
+			ng-model="search.shop_name">
+	</form>
+	<table class="table table-bordered">
+		<tr>
+			<th>商品名称</th>
+			<th>单价(元)</th>
+			<th>数量</th>
+			<th>操作</th>
+		</tr>
+		<tr ng-repeat="item in cart | filter:search">
+			<td>{{item.shop_name}}</td>
+			<td>{{item.shop_price}}</td>
+			<td>{{item.shop_count}}</td>
+			<td><button ng-click="addGwc(item);" type="button"
+					class="btn btn-danger">加入购物车</button></td>
+		</tr>
+	</table>
+
+	<nav>
+		<ul class="pager" ng-model="fenye">
+			<li ng-click="PreSelect();"><a href="">上一页</a></li>
+			<li ng-click="NextSelect();"><a href="">下一页</a></li>
+		</ul>
+	</nav>
+	<div ng-show="!cart.length">
+	   <p>已经是最后了,没有下一页了</p>
+	</div>
+	
+</div>
+
+
